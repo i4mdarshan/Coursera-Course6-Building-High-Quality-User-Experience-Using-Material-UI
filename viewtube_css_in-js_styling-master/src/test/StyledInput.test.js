@@ -16,7 +16,11 @@ describe("ViewTube App", () => {
     const component = <StyledInput></StyledInput>;
 
     const tree = renderer.create(component).toJSON();
-    expect(tree).toMatchInlineSnapshot();
+    expect(tree).toMatchInlineSnapshot(`
+      <input
+        className="sc-gsnTZi kmEwEk"
+      />
+    `);
 
     expect(tree.type).toBe("input");
   });
@@ -25,7 +29,11 @@ describe("ViewTube App", () => {
     const component = <StyledInput></StyledInput>;
 
     const tree = renderer.create(component).toJSON();
-    expect(tree).toMatchInlineSnapshot();
+    expect(tree).toMatchInlineSnapshot(`
+      <input
+        className="sc-gsnTZi kmEwEk"
+      />
+    `);
 
     expect(
       window.getComputedStyle(

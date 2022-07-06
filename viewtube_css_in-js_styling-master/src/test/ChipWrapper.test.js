@@ -7,7 +7,7 @@ import { ChipWrapper } from "../component/Chip";
 describe("ViewTube App", () => {
   beforeEach(() => render(<App />));
   afterEach(() => cleanup());
-  
+
   test("should have ChipWrapper component", function () {
     expect(ChipWrapper).toBeTruthy();
   });
@@ -16,7 +16,11 @@ describe("ViewTube App", () => {
     const component = <ChipWrapper></ChipWrapper>;
 
     const tree = renderer.create(component).toJSON();
-    expect(tree).toMatchInlineSnapshot();
+    expect(tree).toMatchInlineSnapshot(`
+      <button
+        className="sc-dkzDqf eQLSXv"
+      />
+    `);
 
     expect(tree.type).toBe("button");
   });
@@ -25,7 +29,11 @@ describe("ViewTube App", () => {
     const component = <ChipWrapper></ChipWrapper>;
 
     const tree = renderer.create(component).toJSON();
-    expect(tree).toMatchInlineSnapshot();
+    expect(tree).toMatchInlineSnapshot(`
+      <button
+        className="sc-dkzDqf eQLSXv"
+      />
+    `);
 
     expect(
       window.getComputedStyle(
@@ -45,5 +53,4 @@ describe("ViewTube App", () => {
       ).borderRadius
     ).toBeTruthy();
   });
-
 });
