@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, Icon, IconButton, TextField } from '@mui/material';
 
 class JournalEditor extends React.Component{
     constructor(props){
@@ -14,38 +15,39 @@ class JournalEditor extends React.Component{
                         <h1 id="journal-editor__date">{journal.date}</h1>
                         <h2 id="journal-editor__mood-label">How's your Mood Today</h2>
                         <div id="journal-editor__mood">
-                            <button className={journal.mood=='Excited' ? 'selectedMood' : 'mood'} 
+                            <IconButton className={journal.mood=='Excited' ? 'selectedMood' : 'mood'} 
                                 onClick={()=>this.props.setMood('Excited')}>
-                                <i className="far fa-smile-beam fa-fw"></i>
-                            </button>
-                            <button className={journal.mood=='Happy' ? 'selectedMood' : 'mood'} 
+                                <Icon baseClassName="far" className="fa-smile-beam" />
+                            </IconButton>
+                            <IconButton className={journal.mood=='Happy' ? 'selectedMood' : 'mood'} 
                                onClick={()=>this.props.setMood('Happy')}>
-                                <i className="far fa-smile fa-fw"></i>
-                            </button>
-                            <button className={journal.mood=='Surprised' ? 'selectedMood' : 'mood'} 
+                                <Icon baseClassName="far" className="fa-smile" />
+                            </IconButton>
+                            <IconButton className={journal.mood=='Surprised' ? 'selectedMood' : 'mood'} 
                                 onClick={()=>this.props.setMood('Surprised')}>
-                                <i className="far fa-surprise fa-fw"></i>
-                            </button>
-                            <button className={journal.mood=='Sad' ? 'selectedMood' : 'mood'} 
+                                <Icon baseClassName="far" className="fa-surprise" />
+                            </IconButton>
+                            <IconButton className={journal.mood=='Sad' ? 'selectedMood' : 'mood'} 
                                onClick={()=>this.props.setMood('Sad')}>
-                                <i className="far fa-frown fa-fw"></i>
-                            </button>
-                            <button className={journal.mood=='Angry' ? 'selectedMood' : 'mood'} 
+                                <Icon baseClassName="far" className="fa-frown" />
+                            </IconButton>
+                            <IconButton className={journal.mood=='Angry' ? 'selectedMood' : 'mood'} 
                                 onClick={()=>this.props.setMood('Angry')}>
-                                <i className="far fa-angry fa-fw"></i>
-                            </button>
+                                <Icon baseClassName="far" className="fa-angry" />
+                            </IconButton>
                         </div>
-                        <input value={journal.title} onChange={this.props.onTitleChange} 
+                        <TextField variant="outlined" value={journal.title} onChange={this.props.onTitleChange} 
                             placeholder="What's on your Mind?" 
-                            type="text" id="journal-editor__title-editor" />
-                        <textarea value={journal.writeup} onChange={this.props.onWriteupChange} 
+                            label="Title" id="journal-editor__title-editor" />
+                        <TextField value={journal.writeup} onChange={this.props.onWriteupChange} 
                             placeholder="I am all excited to know how was your day like!" 
+                            label="Writeup"
                             name="journal-editor__writeup-editor" 
-                            id="journal-editor__writeup-editor" 
-                            cols="30" rows="20"></textarea>
+                            id="journal-editor__writeup-editor" multiline
+                            rows={10}></TextField>
                         <div id="journal-editor__actions">
-                            <button className="primary" id="save_button" onClick={()=>this.props.onSave()}>Save</button>
-                            <button id="cancel_button" onClick={()=>this.props.onCancel()}>Clear</button>
+                            <Button variant="primary" id="save_button" onClick={()=>this.props.onSave()}>Save</Button>
+                            <Button variant="secondary" id="cancel_button" onClick={()=>this.props.onCancel()}>Clear</Button>
                         </div>
                     </div>
         );

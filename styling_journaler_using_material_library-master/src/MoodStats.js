@@ -1,3 +1,4 @@
+import { Card, CardContent, Icon } from '@mui/material';
 import React from 'react';
 
 class MoodStats extends React.Component{
@@ -9,28 +10,30 @@ class MoodStats extends React.Component{
         return (
             <div>
                <h2>Mood Stats</h2>
-                        <div id="journal-catalog__mood-stats">
-                            <div className="mood-stat">
-                                <div className="mood"><i className="far fa-smile-beam"></i></div>
-                                <div className="stat">{this.props.excitedValue}</div>
-                            </div>
-                            <div className="mood-stat">
-                                <div className="mood"><i className="far fa-smile"></i></div>
-                                <div className="stat">{this.props.happyValue}</div>
-                            </div>
-                            <div className="mood-stat">
-                                <div className="mood"><i className="far fa-surprise"></i></div>
-                                <div className="stat">{this.props.surprisedValue}</div>
-                            </div>
-                            <div className="mood-stat">
-                                <div className="mood"><i className="far fa-frown"></i></div>
-                                <div className="stat">{this.props.sadValue}</div>
-                            </div>
-                            <div className="mood-stat">
-                                <div className="mood"><i className="far fa-angry"></i></div>
-                                <div className="stat">{this.props.angryValue}</div>
-                            </div>
-                        </div>
+                        <Card id="journal-catalog__mood-stats">
+                            <CardContent>   
+                                <div className="mood-stat">
+                                    <div className="mood"><Icon baseClassName="far" className="fa-smile-beam" /></div>
+                                    <div className="stat">{this.props.excitedValue}</div>
+                                </div>
+                                <div className="mood-stat">
+                                    <div className="mood"><Icon baseClassName="far" className="fa-smile" /></div>
+                                    <div className="stat">{this.props.happyValue}</div>
+                                </div>
+                                <div className="mood-stat">
+                                    <div className="mood"><Icon baseClassName="far" className="fa-surprise" /></div>
+                                    <div className="stat">{this.props.surprisedValue}</div>
+                                </div>
+                                <div className="mood-stat">
+                                    <div className="mood"><Icon baseClassName="far" className="fa-frown" /></div>
+                                    <div className="stat">{this.props.sadValue}</div>
+                                </div>
+                                <div className="mood-stat">
+                                    <div className="mood"><Icon baseClassName="far" className="fa-angry" /></div>
+                                    <div className="stat">{this.props.angryValue}</div>
+                                </div>
+                            </CardContent>
+                        </Card>
             </div>
         );
     }
